@@ -2,14 +2,14 @@
 <html>
 <head>
     <script src="lib/Vue/vue_2.6.12.js"></script>
-    <title>Index</title>
+    <title>Transfom 3d </title>
 </head>
 <body>
     
-    <div id="root" v-on:mousemove="onMouseMove">
+    <div id="root" @mousemove="onMouseMove">
 
-        <div :style="styleOne"></div>
-        <div :style="styleTwo"></div>
+        <div v-bind:style="styleOne"></div>
+        <div v-bind:style="styleTwo"></div>
     </div>
 
 </body>
@@ -24,8 +24,8 @@
         }, 
         methods: {
             onMouseMove(event) {
-                this.styleOne = transform(-event.clientX / event.clinetY);
-                this.styleTwo = transform(event.clientX / event.clinetY);
+                this.styleOne = transform(-event.clientX / event.clientY);
+                this.styleTwo = transform(event.clientX / event.clientY);
 
             }
         }
@@ -34,7 +34,7 @@
     function transform(offset) {
         const cos = Math.cos(offset);
         const sin = Math.sin(offset);
-        return { transform: 'matrix3d(${sin} , ${-cos} , ${sin}, 0 ${-cos} , ${sin} ,0 ,0 0,${cos} , ${cos}, ${sin} ,0,0,0,1)' };
+        return { transform: `matrix3d(${sin}, ${-cos}, ${sin}, 0, ${-cos}, ${sin}, 0, 0, 0, ${cos}, ${cos}, ${sin}, 0, 0, 0, 1)` };
     }
 </script>
 
