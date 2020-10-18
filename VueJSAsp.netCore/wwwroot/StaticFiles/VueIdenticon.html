@@ -22,8 +22,8 @@
     new Vue({
         el: '#app',
         methods: {
-            onInput: function () {
-                console.log('Someone type d soemthing');
+            onInput: function (event) {
+                console.log(event.target.value );
             }
         }
 
