@@ -2,6 +2,8 @@
 <html>
 <head>
     <script src="../lib/Vue/vue_2.6.12.js"></script>
+
+    <script src="../lib/jdenticon.js"></script>
     <title>VueIdenticon</title>
 </head>
 <body>
@@ -12,7 +14,8 @@
             <input v-on:input="onInput"  type="text" />
         </div>
         <div>
-            Ouput:
+             Ouput:
+            <div v-html="identicon"></div> 
         </div>
     </div>
 </body>
@@ -21,15 +24,17 @@
 <script>
     new Vue({
         el: '#app',
-        computed: {//turn data into viewable values
-              
-        },
         data: {//Initialize our list of values
-
+            textInput: ''
+        },
+        computed: {//turn data into viewable values
+            identicon: function () {
+                 return jdenticon.toSvg(this.textInput, 200);
+            }
         },
         methods: { //Use these functions to change data
             onInput: function (event) {
-                console.log(event.target.value );
+                this.textInput = event.target.value;
             }
         }
 
