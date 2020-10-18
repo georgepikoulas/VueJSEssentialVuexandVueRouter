@@ -21,7 +21,13 @@
 <script>
     new Vue({
         el: '#app',
-        methods: {
+        computed: {//turn data into viewable values
+              
+        },
+        data: {//Initialize our list of values
+
+        },
+        methods: { //Use these functions to change data
             onInput: function (event) {
                 console.log(event.target.value );
             }
