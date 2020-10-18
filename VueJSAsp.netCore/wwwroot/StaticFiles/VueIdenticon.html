@@ -1,14 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script src="../lib/Vue/vue_2.6.12.js"></script>
     <title>VueIdenticon</title>
 </head>
 <body>
-    <div>
+    <div id="app">
         <h3>My Identicon Generator</h3>
         <div>
             Input:
-            <input type="text" value="" />
+            <input v-on:input="onInput"  type="text" />
         </div>
         <div>
             Ouput:
@@ -16,3 +17,15 @@
     </div>
 </body>
 </html>
+
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            onInput: function () {
+                console.log('Someone type d soemthing');
+            }
+        }
+
+    });
+</script>
