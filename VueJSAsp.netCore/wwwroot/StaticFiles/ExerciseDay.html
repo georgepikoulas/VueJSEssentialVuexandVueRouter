@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="../lib/Vue/vue_2.6.12.js"></script>
+    <title>ExerciseDay</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+</body>
+</html>
+
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            day: new Date().getDay()
+        },
+        template: `
+            <div>
+                {{ day === 5 ? ' Friday , beach time :)' : 'not  Friday :(' }}
+            </div>
+        `
+    });
+</script>
