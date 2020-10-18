@@ -22,6 +22,9 @@
         computed: {//turn data into viewable values
             identicon: function () {
                  //return jdenticon.toSvg(this.textInput, 200);
+            },
+            reverse: function () {
+                return this.textInput.split('').reverse('').join('');
             }
         },
         methods: { //Use these functions to change data
@@ -38,7 +41,7 @@
             </div>
             <div>
                  Ouput:
-                {{textInput.split('').reverse('').join('') }}
+                {{reverse }}
             </div>
         </div>
         `
